@@ -76,7 +76,7 @@ public class ScannerIT extends AccumuloClusterHarness {
     s.setBatchSize(1);
     s.setRange(new Range());
 
-    Stopwatch sw = new Stopwatch();
+    Stopwatch sw = Stopwatch.createUnstarted();
     Iterator<Entry<Key,Value>> iterator = s.iterator();
 
     sw.start();
@@ -98,7 +98,7 @@ public class ScannerIT extends AccumuloClusterHarness {
     s.setBatchSize(1);
     s.setReadaheadThreshold(0l);
 
-    sw = new Stopwatch();
+    sw = Stopwatch.createUnstarted();
     iterator = s.iterator();
 
     sw.start();
